@@ -1,0 +1,34 @@
+@use '../mixins.scss';
+
+.profile,
+.signup,
+.login {
+    @include mixins.center-layout;
+
+    display: flex;
+    flex-direction: column;
+    grid-area: hero;
+    min-height: calc(100vh - 48px);
+
+    & form {
+        @include mixins.paper;
+
+        padding: 24px;
+    }
+
+    p {
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        padding: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+        form {
+            padding: 15px 10px;
+        }
+    }
+}

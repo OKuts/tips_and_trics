@@ -1,0 +1,53 @@
+@use '../mixins.scss';
+
+.settings {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 40%;
+    min-width: 500px;
+    padding: 24px;
+    background: var(--color-2);
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s;
+    transform: var(--isSettingsOpen);
+
+    &.open {
+        transform: translate(0);
+    }
+
+    &.closed {
+        transform: translate(100%);
+    }
+
+    & header {
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+        border-bottom: 5px solid var(--black);
+    }
+
+    & footer {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: flex-end;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        font-size: 3rem;
+        font-weight: 900;
+        border-top: 10px double var(--black);
+
+        & button {
+            @include mixins.button-styles;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        min-width: unset;
+        padding: 15px 10px;
+    }
+}

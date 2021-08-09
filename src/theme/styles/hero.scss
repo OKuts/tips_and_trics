@@ -1,0 +1,40 @@
+@use '../mixins.scss';
+
+.hero {
+    @include mixins.center-layout;
+
+    grid-area: hero;
+
+    & .title {
+        min-height: 210px;
+        padding: 60px 10px;
+        color: var(--color-2);
+        text-align: center;
+        background-image: linear-gradient(
+            195.42deg,
+            #ed1e79 -13.39%,
+            #662d8c 83.2%
+        );
+        border-radius: var(--rounded-corners-top);
+
+        & h1 {
+            font-size: 35px;
+        }
+
+        & h2 {
+            font-size: 24px;
+            font-weight: 500;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .title {
+            min-height: unset;
+            padding: 30px 10px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 0 10px;
+    }
+}

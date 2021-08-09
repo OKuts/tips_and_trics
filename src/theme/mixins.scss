@@ -1,0 +1,28 @@
+@import './sass-vars.scss';
+
+@mixin paper {
+    background-color: var(--color-2);
+    border-radius: var(--border-radius-angle);
+    box-shadow: var(--box-shadow);
+}
+
+@mixin center-layout {
+    width: 100%;
+    max-width: $content-width;
+    padding: 0 24px;
+}
+
+@mixin button-styles {
+    padding: 7px;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-7);
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid currentColor;
+    border-radius: 5px;
+
+    &:hover:not(:disabled) {
+        color: var(--color-5);
+    }
+}

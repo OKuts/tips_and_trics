@@ -1,0 +1,39 @@
+/* Core */
+@import 'sanitize.css';
+
+/* Instruments */
+@import './css-vars.scss';
+@import './sass-vars.scss';
+@import './reset.scss';
+
+/* Components Styles */
+@import './styles/nav.scss';
+@import './styles/layout.scss';
+@import './styles/hero.scss';
+@import './styles/tip-view-layout.scss';
+@import './styles/publish-tip.scss';
+@import './styles/login.scss';
+@import './styles/settings.scss';
+
+:root {
+    min-height: 100vh;
+    background-color: var(--color-3);
+
+    @mixin font-family {
+        font-family: roboto, system-ui;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    & body {
+        min-height: 100vh;
+        margin: 0;
+
+        @include font-family;
+
+        & input,
+        & textarea {
+            @include font-family;
+        }
+    }
+}
